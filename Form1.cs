@@ -15,7 +15,7 @@ public partial class Form1 : Form
         timer = new Timer
         {
             AutoReset = false,
-            Interval = 20 * 60000 + 10000
+            Interval = (20 * 60000) + 10000
         };
         this.Shown += form_shown;
         timer.Elapsed += timer_elapsed;
@@ -50,18 +50,18 @@ public partial class Form1 : Form
         var message = "";
         switch (timer.Interval)
         {
-            case (20 * 60000):
-                timer.Interval = 8 * 60000 + 10000;
+            case (20 * 60000)+10000:
+                timer.Interval = (8 * 60000) + 10000;
                 message = "Standing Up";
                 break;
 
-            case (8 * 60000):
-                timer.Interval = 2 * 60000 + 10000;
+            case (8 * 60000)+10000:
+                timer.Interval = (2 * 60000) + 10000;
                 message = "Moving Around";
                 break;
 
-            case (2 * 60000):
-                timer.Interval = 20 * 60000 + 10000;
+            case (2 * 60000) + 10000:
+                timer.Interval = (20 * 60000) + 10000;
                 message = "Sitting";
                 break;
         }
